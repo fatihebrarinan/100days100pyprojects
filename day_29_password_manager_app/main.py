@@ -1,16 +1,21 @@
+from random import choice, randint, shuffle
 from tkinter import *
 from tkinter import messagebox
-from random import choice, randint, shuffle
+
 import pyperclip
+
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+               'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+               'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
     password_list = []
 
-    password_list += [choice(letters) for char in range(randint(8, 10))]
+    password_list += [choice(letters) for _ in range(randint(8, 10))]
     password_list += [choice(symbols) for sym in range(randint(2, 4))]
     password_list += [choice(numbers) for num in range(randint(2, 4))]
     shuffle(password_list)
@@ -23,7 +28,8 @@ def generate_password():
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_password():
     if website_entry.get() != "" and username_entry.get() != "" and password_entry.get() != "":
-        is_ok = messagebox.askokcancel(title=website_entry.get(), message=f"These are the details entered:\nEmail: {username_entry.get()}\n Password: {password_entry.get()}\nSave?")
+        is_ok = messagebox.askokcancel(title=website_entry.get(),
+                                       message=f"These are the details entered:\nEmail: {username_entry.get()}\n Password: {password_entry.get()}\nSave?")
         if is_ok:
             with open("data.txt", "a") as file:
                 file.write(f"{website_entry.get()} | {username_entry.get()} | {password_entry.get()}\n")
@@ -68,11 +74,5 @@ generatepassword_button.grid(row=3, column=2)
 
 add_button = Button(text="Add", width=43, command=save_password)
 add_button.grid(row=4, column=1, columnspan=2)
-
-
-
-
-
-
 
 window.mainloop()
