@@ -9,7 +9,7 @@ df = pandas.read_csv("birthdays.csv")
 letter_list = []
 
 user = "ap9872355@gmail.com"
-password = "uwgcaisvnfhqdfgt"
+password = "sample_password"
 connection =  smtplib.SMTP(host="smtp.gmail.com", port=587)
 connection.starttls()
 connection.login(user=user, password=password)

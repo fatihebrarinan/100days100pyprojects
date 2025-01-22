@@ -4,11 +4,11 @@ from datetime import datetime
 
 import requests
 
-MY_LAT = 39.867561
-MY_LNG = 32.821524
+MY_LAT = 0
+MY_LNG = 0
 
 email = "ap9872355@gmail.com"
-password = "uwgcaisvnfhqdfgt"
+password = "sample_password"
 connection = smtplib.SMTP(host="smtp.gmail.com", port=587)
 connection.starttls()
 connection.login(user=email, password=password)
