@@ -1,0 +1,13 @@
+html{
+    background-color: black;
+    color: aliceblue;
+}
+h1{
+    font-family: "Libre Baskerville", serif;
+}
+.main{
+    text-align: center;
+}
+#img{
+    width: 75%;
+}
