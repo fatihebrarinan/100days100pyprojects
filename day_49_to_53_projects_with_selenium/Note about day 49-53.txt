@@ -1,0 +1,1 @@
+Days 49 to 53 were all about using the Selenium web driver to create bots. There were little thing I could learn about these projects, therefore I skipped them.
